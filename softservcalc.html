@@ -1,0 +1,145 @@
+<!---------------------------------------------------------->
+<!--- Final Exam --->  
+<!--- Written by: Carolina Torres Restrepo - 2195431 --->  
+<!--- For “Front-End Web Programming” Section 05807 - Winter 2022 ---> 
+<!---------------------------------------------------------->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CTR Software Services</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="stylesheet.css" rel="stylesheet">
+</head>
+<script type="text/javascript">
+  function calculate(){
+    if (document.querySelector('input[name="licensing"]:checked') == null) {
+        alert("ATTENTION: You must complete your order!!!");
+    }
+    else {
+    var fee1 = 0;
+    var fee2 = 0;
+    var Selection = document.querySelector('input[name="licensing"]:checked').value;
+
+    if(Selection =='Yearly license'){
+      fee1 = 5000;
+    }
+    else if (Selection =='One-Time Purchase') {
+        fee1 = 20000;
+      }
+  
+      document.getElementById("radios").setAttribute('value', '$' + fee1); 
+
+
+      if(document.querySelector('[name="technical support"]:checked') != null) {
+        fee2 += 3500;
+      }
+      if(document.querySelector('[name="on site trainning"]:checked') != null) {
+        fee2 += 2000;
+      }
+      if(document.querySelector('[name="cloud backup"]:checked') != null) {
+        fee2 += 300;
+      }
+
+    document.getElementById("checkboxes").setAttribute('value', '$' + fee2); 
+
+} 
+  }
+</script>
+<body>
+<div id="wrapper">
+  <header>
+    <h1><a href="index.html">Software Services Calculator</a></h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="softservcalc.html">Software Services Calculator</a></li> 
+      <li><a href="contact.html">Contact</a></li>
+	</ul>
+  </nav>
+  <main>
+    <h2>Professional Services</h2>
+    <br>
+	<div id="flow">
+      <table class="center">
+       <tr>
+         <th class="tableleft">Option</th>
+         <th class="tableright">Price</th>
+     </tr>
+     <tr>
+         <td>Yearly lease</td>
+         <td>$5,000</td>
+     </tr>
+     <tr>
+         <td>One-Time Purchase</td>
+         <td>$20,000</td>
+     </tr>
+     <tr>
+         <td>Level-3 Technical Support</td>
+         <td>$3,500</td>
+     </tr>
+     <tr>
+         <td>On-Site Training</td>
+         <td>$2,000</td>
+     </tr>
+     <tr>
+      <td>Cloud Backup</td>
+      <td>$300</td>
+  </tr>
+     </table>
+	</div> <!--- Close div for flow--->  
+  <br>
+<div class="allfieldsets">
+  <fieldset class="fieldset1">
+    <legend>Licensing Options</legend>
+    <br>
+    <div class="radios">                                                 
+    <input type="radio" id="radios" name="licensing" value="Yearly license">Yearly license<br>
+    <br>
+    <input type="radio" id="radios" name="licensing" value="One-Time Purchase">One-Time Purchase<br>
+    <br>  
+    <br>    
+    </div>
+    </fieldset>
+    <fieldset class="fieldset2">
+      <legend>Optional Features (yearly)</legend>
+      <br>
+      <div class="checkbox">                                                 
+      <input type="checkbox" id="checkboxes" name="technical support" value="Level-3 Technical Support">Level-3 Technical Support<br>
+      <br>
+      <input type="checkbox" id="checkboxes" name="on site training" value="On-Site Training">On-Site Training<br> 
+      <br>
+      <input type="checkbox" id="checkboxes" name="cloud backup" value="Cloud Backup">Cloud Backup<br>        
+      </div>
+      </fieldset>
+    <br>
+    <div>
+    <fieldset class="lastfield">
+    <p>Cost of software licensing: <input id="licensingcost" type="text" name="liccost" ></p>
+    <br>
+    <p>Cost of optional features: <input id="optionalcost" type="text" name="optcost" ></p>
+  </fieldset>
+  
+</div>
+</div> <!--- Close div for allfieldsets---> 
+<br><center><button id="button" type="button" name="calculate" onclick="calculate()">Calculate</button></center>
+
+<br>
+<br>
+<div class="address">
+  CTR Software Services<br>
+<a id="mobile" href="tel:438-403-0797">438-403-0797</a><span id="desktop">438-403-0797</span><br>
+1675 Rue Poupart<br>
+Montreal, QC H2K3G9<br><br>
+</div>
+  </main>
+  <footer>
+    Copyright &copy; CTR Software Services<br>
+    <a href="mailto:hello@ctrsoftwareservices.com">hello@ctrsoftwareservices.com</a>
+      </footer>
+    </div>
+    </body>
+    </html>
+    
